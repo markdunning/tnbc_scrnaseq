@@ -42,9 +42,9 @@ source(here::here("code", "funcs.R"))
 source(here::here("code", "funcs_markers.R"))
 
 ## read in normalized data and phenotypic information
-mat_norm <- read.table(here("data", "norm_data.txt"), sep = "\t", header = TRUE)
-pd_norm <- read.table(here("data", "pd_norm.txt"), sep = "\t", header = TRUE, stringsAsFactors = FALSE)
-fd_norm <- read.table(here("data", "fd_norm.txt"), sep = "\t", header = TRUE, stringsAsFactors = FALSE)
+mat_norm <- read.table(here::here("data", "norm_data.txt"), sep = "\t", header = TRUE)
+pd_norm <- read.table(here::here("data", "pd_norm.txt"), sep = "\t", header = TRUE, stringsAsFactors = FALSE)
+fd_norm <- read.table(here::here("data", "fd_norm.txt"), sep = "\t", header = TRUE, stringsAsFactors = FALSE)
 sceset_final <- SingleCellExperiment(assays = list(exprs = as.matrix(mat_norm)),
                                      colData = pd_norm, 
                                      rowData = fd_norm)
